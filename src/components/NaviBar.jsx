@@ -10,7 +10,7 @@ import {
   Box,
   Heading,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export const NaviBar = () => {
   const bg = useColorModeValue("white", "gray.800");
@@ -18,7 +18,11 @@ export const NaviBar = () => {
   return (
     <Flex alignItems="center" justifyContent="space-between" mx="auto">
       <Flex>
-        <Heading as="h2">APP AVENGERS</Heading>
+        <Heading as="h2">
+            <NavLink to={"/"} activeClassName="active">
+            APP AVENGERS
+            </NavLink>
+            </Heading>
       </Flex>
       <HStack display="flex" alignItems="center" spacing={1}>
         <HStack

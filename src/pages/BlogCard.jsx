@@ -27,21 +27,16 @@ const BlogCard = ({ title, description,_id }) => {
     <Card key={_id} boxShadow={"rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}>
       <CardBody>
         <Stack divider={<StackDivider />} spacing="4">
-          <Box>
+          <Box display={"grid"} gap={"25px"}>
             <Heading as={"h4"} textTransform="uppercase">
               {title}
             </Heading>
             <Text pt="2" fontSize='xl'>
               {description}
             </Text>
-            <Text pt="2" fontSize='xl'>
-              {_id}
-            </Text>
-            
+
               <Button onClick={handleUpdate}>UPDATE</Button>  
               <Button onClick={handleDelete}>DELETE</Button>  
-           
-            
           </Box>
         </Stack>
       </CardBody>
