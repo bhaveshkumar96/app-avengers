@@ -51,3 +51,30 @@ export const getAllBlogs = async (dispatch) => {
     console.log(error);
   }
 };
+
+export const deleteBlog = (id) => (dispatch) => {
+  dispatch(deleteBlogsRequest());
+  try {
+    return axios.delete(
+      `https://frail-pear-swordfish.cyclic.app/blogs/deleteblog/${id}`
+    );
+    dispatch(deleteBlogsSuccess());
+  } catch (error) {
+    dispatch(deleteBlogsFailure());
+    console.log(error);
+  }
+};
+
+export const updateBlog = (id, blog) => (dispatch) => {
+  dispatch(updateBlogsRequest());
+  try {
+    axios.patch(
+      `https://frail-pear-swordfish.cyclic.app/blogs/updateblog/${id}`,
+      blog
+    );
+    dispatch(updateBlogsSuccess());
+  } catch (error) {
+    console.log(error);
+    dispatch(updateBlogsFailure(error));
+  }
+};
