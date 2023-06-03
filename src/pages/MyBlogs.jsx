@@ -28,19 +28,6 @@ const MyBlogs = () => {
         blogs.map((el, id) => {
           return <BlogCard key={id} {...el} />;
         })}
-
-      {/* <Box
-        position={"absolute"}
-        top={"50%"}
-        left={"50%"}
-        backgroundColor={"blackAlpha.200"}
-        width={"400px"}
-        height={"fit-content"}
-      >
-        <Input size={"40"} placeholder="Enter title" h={"40px"} />
-        <Input size={"40"} placeholder="Enter Description" h={"40px"} />
-        <Button handleUpdateBlog>UPDATE</Button>
-      </Box> */}
     </div>
   );
 };
