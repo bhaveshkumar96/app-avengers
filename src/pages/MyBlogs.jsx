@@ -2,18 +2,18 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllBlogs } from "../redux/action";
 import BlogCard from "./BlogCard";
-import { Box, Button, Input } from "@chakra-ui/react";
 const MyBlogs = () => {
   const dispatch = useDispatch();
   const blogs = useSelector((state) => state.blogs);
+  const isLoading = useSelector((state) => state.isLoading);
   useEffect(() => {
     dispatch(getAllBlogs);
   }, []);
-  const handleUpdateBlog = ()=>{
-
-  }
-  console.log(blogs);
-  return (
+  console.log(isLoading ? "true" : "false");
+  if(isLoading){
+    return  <img src="https://cdn.pixabay.com/animation/2022/10/11/03/16/03-16-39-160_512.gif"  margin="auto"/>
+  }else{
+     return (
     <div
       style={{
         display: "grid",
@@ -30,6 +30,8 @@ const MyBlogs = () => {
         })}
     </div>
   );
+  }
+ 
 };
 
 export default MyBlogs;

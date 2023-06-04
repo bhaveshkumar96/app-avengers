@@ -1,11 +1,13 @@
 import { Box, Button, Heading, Input, Stack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Home = () => {
   const [inputs, setInputs] = useState({
     title: "",
     description: "",
   });
+  const navigate = useNavigate()
   const handleChange = (e) => {
     setInputs((prevState) => ({
       ...prevState,
@@ -28,6 +30,10 @@ const Home = () => {
     sendRequest()
       .then((data) => console.log(data))
       .then(() => console.log("first"));
+      setTimeout(()=>{
+        navigate("/blogs")
+      },2000)
+      
   };
   return (
     <div

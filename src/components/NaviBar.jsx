@@ -19,7 +19,7 @@ export const NaviBar = () => {
     <Flex alignItems="center" justifyContent="space-between" mx="auto">
       <Flex>
         <Heading as="h2">
-            <NavLink to={"/"} activeClassName="active">
+            <NavLink to={"/"} >
             APP AVENGERS
             </NavLink>
             </Heading>
